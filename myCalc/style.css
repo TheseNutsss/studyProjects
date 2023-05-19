@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.app{
+    width: 50vw;
+    max-width: 750px;
+    height: 80vh;
+    border: 1px darkblue dashed;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.icon{
+    width: 24%;
+    border: 1px solid black;  
+    margin: 2px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+.icon p {
+    align-self: center;
+}
+.double{
+    flex: 2;
+}
+.input{
+    width: 98%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.output{
+    width: 98%;
+    height: 20%;
+    border: 1px solid brown;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.output::after{
+    clear: both;
+    content: '';
+}
+@media screen and (max-width: 700px) {
+    .app{
+        width: 100vw;
+        height: 100vh;
+    }
+    .icon{
+        margin: 0;
+    }
+}

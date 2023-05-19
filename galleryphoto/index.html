@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .panel1{
+            background-image: url('https://source.unsplash.com/gYl-UtwNg_I/1500x1500');
+        }
+        .panel2{
+            background-image: url('https://source.unsplash.com/rFKUFzjPYiQ/1500x1500');
+        }
+        .panel3 {
+            background-image: url('https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d');
+}
+        .panel4{
+            background-image: url('https://source.unsplash.com/ITjiVXcwVng/1500x1500');
+        }
+        .panel5{
+            background-image: url('https://source.unsplash.com/3MNzGlQM7qs/1500x1500');
+        }
+        .panel{
+            width: 20wv;
+            flex: 1;
+            font-size: 20px;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            transition: 0.7s ease-in-out;
+        }
+        .panels{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .panels:hover{
+           cursor: pointer;
+        }
+        .open-active{
+            flex: 5;
+            transition: 1s ease-in-out;
+            font-size: 40px;
+        }
+        .panel p{
+            font-size: 2em;
+            font-family: 'americ SC', cursive;
+        }
+        .panel > *{
+            /*border: 1px solid red;*/
+            display: flex;
+            flex: 1 0 auto;
+            justify-content: center;
+            align-items: center;
+        }
+        .panel >*:first-child{
+            transform: translateY(-100%);
+            transition: 0.7s ease-in-out;
+        }
+        .panel >*:last-child{
+            transform: translateY(100%);
+            transition: 0.7s ease-in-out;
+        }
+        .panel.open-active >*:first-child{
+            transform: translateY(0);
+            font-size: 40px;
+        }
+        .panel.open-active >*:last-child{
+            transform: translateY(0);
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="panels">
+         <div class="panel panel1">
+            <p>HEY</p>
+            <p>LET'S</p>
+            <p>DANCE</p>
+         </div>
+         <div class="panel panel2">
+            <p>GIVE</p>
+            <p>TAKE</p>
+            <p>RECEIVE</p>
+         </div>
+         <div class="panel panel3">
+            <p>EXPERIENCE</p>
+            <p>IT</p>
+            <p>TODAY</p>
+         </div>
+         <div class="panel panel4">
+            <p>GIVE</p>
+            <p>ALL</p>
+            <p>YOU CAN</p>
+         </div>
+         <div class="panel panel5">
+            <p>LIFE</p>
+            <p>IN</p>
+            <p>MOTION</p>
+         </div>
+    </div>
+    <script>
+        const divs = document.querySelectorAll('.panel')
+        divs.forEach(div=>{
+            div.addEventListener('click', ()=>{
+                divs.forEach(currDiv=>{
+                    if(currDiv !== div){
+                        if(currDiv.classList.contains('open-active')){
+                            currDiv.classList.remove('open-active')
+                        }
+                    }
+                })
+                if(div.classList.contains('open-active')){
+                    div.classList.remove('open-active')
+                } else {
+                div.classList.add('open-active')
+                }
+            })
+        })
+    </script>
+</body>
+</html>

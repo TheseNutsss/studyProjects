@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age = 100
+        let age2 = age
+        console.log(age, age2)
+        age = 200
+        console.log(age, age2)
+        const arr =  ['Вася', 'Петя', 'Ваня','Пётр']
+        const arr2 = [...arr] //  или можно сделать arr.slice(), тоже создаст копию
+        arr2[4]= "Немец"
+        console.log(arr2)
+        console.log(arr)
+        //копию обьекта делаем при помощи Object.assign({}, objectfrom) либо JSON.parse(json.stringify(objectfrom))
+    </script>
+</body>
+</html>
