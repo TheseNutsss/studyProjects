@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+        }
+        .app{
+            width: 100%;
+            height: 100vh;
+            border: 1px solid black;
+        }
+        .pickerWrap{
+            display: flex;
+            justify-content: flex-start;
+        }
+        .pickers{
+            margin-top: 10px;
+        }
+        :root{
+            --blur: 10px;
+            --spacing: 20px;
+            --color: #ffff2f;
+        }
+        img{
+            padding: var(--spacing);
+            background-color: var(--color);
+            filter:blur(var(--blur));
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="app">
+        <div class="pickerWrap">
+            <div class="pickers">
+                <label for="blur">Blur:</label>
+                <input class="input" name="blur" type="range" min="0" max="25" value="10" data-sizing="px"/>
+            </div>
+            <div class="pickers">
+                <label for="spacing">Spacing:</label>
+                <input class ="input" name="spacing" type="range" min="0" max="200" value="10" data-sizing="px"/>
+            </div>
+            <div class="pickers">
+                <label for="color">Color:</label>
+                <input class = "input" name="color" type="color" value="#ffc600"/>
+            </div>
+        </div>
+        <img src="https://res.klook.com/image/upload/c_fill,w_843,h_474/q_80/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/ys5jqwvg6pgtpacb5kqb.webp"/>
+        
+    </div>
+    <script>
+        const inputs = document.querySelectorAll('.input')
+        console.log(inputs)
+        function updateData(){
+            const measure = this.dataset.sizing || ''
+            document.documentElement.style.setProperty(`--${this.name}`,  this.value + measure)
+        }
+        inputs.forEach(input=> input.addEventListener("change", updateData))
+        inputs.forEach(input=> input.addEventListener("mousemove", updateData))
+    </script>
+</body>
+</html>
